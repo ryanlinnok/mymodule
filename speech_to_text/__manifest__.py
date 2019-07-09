@@ -1,10 +1,13 @@
 {
-    'name': 'E Notula',
+    'name': 'E-Notes',
     'version': '1.0',
     'category': 'Uncategorized',
     'summary': 'Speech to Text',
-    'description':"""Modul ini berfungsi untuk memudahkan dalam penginputan notulen, E Notula yaitu suatu sistem yang mengubah ucapan audiovisual menjadi text""",
+    'description':"""\
+        This module serves to facilitate inputting notes, E-Notes, which is a system that converts audiovisual speech into text
+        """,
     'author': 'ryanlinnok',
+    'images': ['static/description/images/main_screenshot.png'],
     'depends': ['base'],
     'website': 'https://ryanlinnok.github.io',
     'data': [
@@ -14,9 +17,9 @@
         'views/speech_to_text_web.xml',
     ],
     'installable': True,
-    'auto_install': True,
+    'auto_install': False,
     'application': True,
-    'price': 99,
+    'price': 49,
     'currency': 'EUR',
 }
 
