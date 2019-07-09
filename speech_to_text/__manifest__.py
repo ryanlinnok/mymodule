@@ -5,6 +5,7 @@
     'summary': 'Speech to Text',
     'description':"""Modul ini berfungsi untuk memudahkan dalam penginputan notulen, E Notula yaitu suatu sistem yang mengubah ucapan audiovisual menjadi text""",
     'author': 'ryanlinnok',
+    'images': ['static/description/images/main_screenshot.png'],
     'depends': ['base'],
     'website': 'https://ryanlinnok.github.io',
     'data': [
@@ -17,6 +18,6 @@
     'auto_install': True,
     'application': True,
     'price': 99,
-    'currency': 'EUR',
+    'currency': 'USD',
 }
 
