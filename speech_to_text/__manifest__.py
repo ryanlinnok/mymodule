@@ -3,7 +3,9 @@
     'version': '1.0',
     'category': 'Uncategorized',
     'summary': 'Speech to Text',
-    'description':"""Modul ini berfungsi untuk memudahkan dalam penginputan notulen, E Notula yaitu suatu sistem yang mengubah ucapan audiovisual menjadi text""",
+    'description':"""\
+        This module serves to facilitate inputting notes, E Notula, which is a system that converts audiovisual speech into text
+        """,
     'author': 'ryanlinnok',
     'images': ['static/description/images/main_screenshot.png'],
     'depends': ['base'],
