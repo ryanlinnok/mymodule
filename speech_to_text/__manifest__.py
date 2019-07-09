@@ -16,7 +16,6 @@ This module serves to facilitate inputting notes, E-Notes, which is a system tha
     'data': [
         # 'security/ir.model.access.csv',
         'views/speech_to_text_view.xml',
-        # 'views/dashboard_iframe_view.xml',
         'views/speech_to_text_web.xml',
     ],
     'installable': True,
