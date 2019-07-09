@@ -1,10 +1,10 @@
 {
-    'name': 'E Notula',
+    'name': 'E-Notes',
     'version': '1.0',
     'category': 'Uncategorized',
     'summary': 'Speech to Text',
     'description':"""\
-        This module serves to facilitate inputting notes, E Notula, which is a system that converts audiovisual speech into text
+        This module serves to facilitate inputting notes, E-Notes, which is a system that converts audiovisual speech into text
         """,
     'author': 'ryanlinnok',
     'images': ['static/description/images/main_screenshot.png'],
@@ -17,9 +17,9 @@
         'views/speech_to_text_web.xml',
     ],
     'installable': True,
-    'auto_install': True,
+    'auto_install': False,
     'application': True,
-    'price': 99,
-    'currency': 'USD',
+    'price': 49,
+    'currency': 'EUR',
 }
 
