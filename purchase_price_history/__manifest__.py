@@ -1,27 +1,25 @@
 {
-    'name': 'E-Notes',
+    'name': 'Purchase Price History',
     'version': '1.0',
-    'category': 'Uncategorized',
-    'summary': 'Speech to Text',
+    'category': 'Purchase',
+    'summary': 'Purchase Price History',
     "description": """\
 
-This module serves to facilitate inputting notes, E-Notes, which is a system that converts audiovisual speech into text
+Modul ini berfungsi untuk memudahkan dalam melihat riwayat harga pembelian
 
 """,
 
     'author': 'ryanlinnok',
     'images': ['static/description/images/main_screenshot.png'],
-    'depends': ['base'],
+    'depends': ['base','purchase'],
     'website': 'https://ryanlinnok.github.io',
     'data': [
         # 'security/ir.model.access.csv',
-        'views/speech_to_text_view.xml',
-        'views/speech_to_text_web.xml',
+        "views/product_product_view.xml",
     ],
     'installable': True,
     'auto_install': False,
     'application': True,
-    'price': 39,
+    'price': 19,
     'currency': 'EUR',
 }
-
