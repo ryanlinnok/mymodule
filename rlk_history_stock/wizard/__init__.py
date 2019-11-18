@@ -1,0 +1,1 @@
+from . import wizard_history_stock

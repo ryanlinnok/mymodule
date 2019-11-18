@@ -21,6 +21,6 @@ Modul ini berfungsi untuk memudahkan dalam melihat riwayat harga pembelian
     'auto_install': False,
     'application': True,
     'license': 'LGPL-3',
-    'price': 19,
+    'price': 4,
     'currency': 'EUR',
 }
