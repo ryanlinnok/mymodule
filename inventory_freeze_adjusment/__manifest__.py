@@ -21,6 +21,6 @@ Modul ini berfungsi untuk memudahkan Stock Opname, Aktifitas Sales dan Purchase 
     'installable': True,
     'auto_install': False,
     'application': True,
-    'price': 29,
+    'price': 9,
     'currency': 'EUR',
 }

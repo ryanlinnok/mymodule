@@ -20,6 +20,6 @@ Modul ini berfungsi untuk memudahkan dalam melihat riwayat harga pembelian
     'installable': True,
     'auto_install': False,
     'application': True,
-    'price': 19,
+    'price': 4,
     'currency': 'EUR',
 }
