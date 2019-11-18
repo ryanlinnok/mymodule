@@ -21,7 +21,7 @@ This module serves to facilitate inputting notes, E-Notes, which is a system tha
     'installable': True,
     'auto_install': False,
     'application': True,
-    'price': 39,
+    'price': 9,
     'currency': 'EUR',
 }
 
