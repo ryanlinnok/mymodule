@@ -7,6 +7,7 @@
         This module is designed to remove or hide the "Add an Item" button and trash icon in x2Many fields when the status is not in draft. However, other columns can still be edited.
     """,
     'author': 'ryanlinnok',
+    'images': ['static/description/images/image_2.png'],
     'depends': ['web'],
     'website': 'https://ryanlinnok.github.io',
     'data': [
