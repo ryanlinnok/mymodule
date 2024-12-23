@@ -21,6 +21,7 @@ Modul ini berfungsi untuk memudahkan Stock Opname, Aktifitas Sales dan Purchase 
     'installable': True,
     'auto_install': False,
     'application': True,
+    'license': 'LGPL-3',
     'price': 9,
     'currency': 'EUR',
 }

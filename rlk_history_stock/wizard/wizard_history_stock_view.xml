@@ -1,0 +1,180 @@
+<odoo>
+    <data>
+        
+       <record id="wizard_laporan_history_stock" model="ir.ui.view">
+            <field name="name">Laporan History Stock 1</field>
+            <field name="model">laporan.history.stock.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Laporan History Stock"> 
+                    <group cols="2" string="Periode"> 
+                        <group>
+                            <field name="date_start"/>
+                            <field name="date_stop"/>
+                            <field name="company_id" invisible="1" options="{'no_open': True,'no_create_edit': True,'no_quick_create': True}"/>
+                            <field name="product_id" required="1" options="{'no_open': True,'no_create_edit': True,'no_quick_create': True}"/>
+                        </group>  
+                        <group>
+                            <field name="gudang_id" options="{'no_open': True,'no_create_edit': True,'no_quick_create': True}"/>
+                            <field name="location_id" domain="[('usage','=','internal')]" required="1" options="{'no_open': True,'no_create_edit': True,'no_quick_create': True}"/>
+                        </group>  
+                    </group>           
+                    <footer>
+                        <button name="generate_report" string="Print" type="object" class="btn-primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_laporan_history_stock_wizard" model="ir.actions.act_window">
+            <field name="name">Laporan History Stock 1</field>
+            <field name="res_model">laporan.history.stock.wizard</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="wizard_laporan_history_stock"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem
+            action="action_laporan_history_stock_wizard"
+            id="menu_laporan_history_stock"
+            parent="stock.menu_warehouse_report"
+            sequence="220"/>
+
+        <report
+          id="report_laporan_history_stock_menu"
+          string="Laporan History Stock 1"
+          model="stock.move"
+          report_type="qweb-html"
+          file="rlk_history_stock.report_laporan_history_stock"
+          name="rlk_history_stock.report_laporan_history_stock"
+          menu="False"
+        />    
+
+
+         <template id="report_laporan_history_stock">
+            <div class="row">
+                <t t-call="rlk_history_stock.report_laporan_history_stock_body"/>
+            </div>
+        </template>
+
+        <record id="laporan_history_stock_paperformat" model="report.paperformat"> 
+            <field name="name">Laporan History Stock</field>
+            <field name="default" eval="False" />
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">4</field>
+            <field name="margin_bottom">4</field>
+            <field name="margin_left">4</field>
+            <field name="margin_right">4</field>
+            <field name="header_line" eval="False" />
+            <field name="header_spacing">35</field>
+            <field name="dpi">90</field>
+        </record>
+
+        <record id="report_laporan_history_stock_menu" model="ir.actions.report.xml">
+            <field name="paperformat_id" ref="rlk_history_stock.laporan_history_stock_paperformat"/>
+        </record>
+
+        <template id="report_laporan_history_stock_body">
+
+            <xpath expr="//head" position="inside">
+                <style type="text/css">
+                    .o_in_iframe {
+                        width:100%;
+                    }
+                </style>
+            </xpath>
+
+            <t t-call="report.html_container">         
+                    <div class="page">        
+
+                         <table>
+                            <tr>
+                                <td><span t-esc="data['company_name']"/></td>
+                            </tr>
+                            <tr>
+                                <td><span t-esc="data['company_address']"/></td>
+                            </tr>
+                            <tr>
+                                <td><span t-esc="data['company_phone']"/></td>
+                            </tr>
+                        </table>                
+
+                        <h2 style="text-align:center;">Laporan History Stock</h2>
+                        <h5 style="text-align:center;">Periode : <span t-esc="data['date_start']"/> s/d <span t-esc="data['date_stop']"/></h5>
+
+                        <table>
+                            <tr>
+                                <td style="text-align: left;font-size:14px;">Gudang </td><td> : </td><td> <span t-esc="data['gudang_name']"/></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: left;font-size:14px;">Lokasi </td><td> : </td><td> <span t-esc="data['lokasi_name']"/></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: left;font-size:14px;">Item </td><td> : </td><td> <span t-esc="data['product_name']"/></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align: left;font-size:14px;">Satuan </td><td> : </td><td> <span t-esc="data['uom_po_name']"/></td>
+                            </tr>
+                        </table> 
+
+                        <table class="table table-condensed" style="margin-top:20px;">
+                           <thead style="font-size:75%;">
+                                <tr>
+                                    <th style="text-align: center;">No.</th>
+                                    <th style="text-align: center;">Tanggal Update</th>
+                                    <th style="text-align: center;">Stock Move</th>
+                                    <th style="text-align: center;">No. Transaksi</th>
+                                    <th style="text-align: center;">Saldo Awal</th>
+                                    <th style="text-align: center;" >Jumlah Masuk</th>
+                                    <th style="text-align: center;">Jumlah Keluar</th>
+                                    <th style="text-align: center;">Saldo Akhir</th>
+                                    <th style="text-align: center;" >Hpp</th>
+                                    <th style="text-align: center;" >Keterangan</th>
+                                    <th style="text-align: center;">Petugas</th>
+                                </tr>
+                            </thead>
+                                
+                            <tbody style="font-size:75%;">
+                                <t t-set="total_masuk" t-value="0"/>
+                                <t t-set="total_keluar" t-value="0"/>
+                            <t t-foreach="get_history_stock_line(data)" t-as="aml">
+                                <t>
+                                    <t t-set="total_masuk" t-value="total_masuk + aml.get('jumlah_masuk')"/>
+                                    <t t-set="total_keluar" t-value="total_keluar + aml.get('jumlah_keluar')"/>
+                                </t>
+                                <tr>
+                                    <td style="text-align: center;"><t t-esc="aml_index +1"/></td>
+                                    <td style="text-align: center;"><t t-esc="aml.get('tanggal_update')"/></td>
+                                    <td style="text-align: center;"><t t-esc="aml.get('stock_move')"/></td>
+                                    <td style="text-align: center;"><t t-esc="aml.get('no_transaksi')"/></td>
+                                    <td style="text-align: center;"><t t-esc="aml.get('saldo_awal')"/></td>
+                                    <td style="text-align: center;"><t t-esc="aml.get('jumlah_masuk')"/></td>
+                                    <td style="text-align: center;"><t t-esc="aml.get('jumlah_keluar')"/></td>
+                                    <td style="text-align: center;"><t t-esc="aml.get('saldo_akhir')"/></td>
+                                    <td style="text-align: center;"><t t-esc="aml.get('hpp')"/></td>
+                                    <td style="text-align: center;"><t t-esc="aml.get('keterangan')"/></td>
+                                    <td style="text-align: center;"><t t-esc="aml.get('petugas')"/></td>
+                                </tr>
+                            </t>
+                            <tr>
+                                <td colspan="3" style="text-align: center;"></td>
+                                <td style="text-align: center;"><strong><span>TOTAL :</span></strong></td>
+                                <td style="text-align: center;"></td>
+                                <td style="text-align: center;"><strong><t t-esc="total_masuk"/></strong></td>
+                                <td style="text-align: center;"><strong><t t-esc="total_keluar"/></strong></td>
+                                <td colspan="4" style="text-align: center;"></td>
+                            </tr>
+                        </tbody>
+
+                        </table>
+                    </div>
+                </t>
+        </template>
+
+    </data>
+</odoo>

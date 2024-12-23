@@ -1,21 +1,21 @@
 {
-    'name': 'Purchase Price History',
+    'name': 'Stock History',
     'version': '1.0',
-    'category': 'Purchase',
-    'summary': 'Purchase Price History',
+    'category': 'Stock',
+    'summary': 'Stock History',
     "description": """\
 
-Modul ini berfungsi untuk memudahkan dalam melihat riwayat harga pembelian
+Modul ini berfungsi untuk memudahkan dalam melihat riwayat stock
 
 """,
 
     'author': 'ryanlinnok',
-    'images': ['static/description/images/main_screenshot.png'],
-    'depends': ['base','purchase'],
+    'depends': ['stock'],
     'website': 'https://ryanlinnok.github.io',
     'data': [
         # 'security/ir.model.access.csv',
-        "views/product_product_view.xml",
+        "views/stock_view.xml",
+        "views/wizard_history_stock_view.xml",
     ],
     'installable': True,
     'auto_install': False,
