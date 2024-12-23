@@ -11,7 +11,7 @@ Modul ini berfungsi untuk memudahkan Stock Opname, Aktifitas Sales dan Purchase 
 
     'author': 'ryanlinnok',
     'images': ['static/description/images/main_screenshot.png'],
-    'depends': ['base','purchase','sale_management'],
+    'depends': ['base','purchase','sale'],
     'website': 'https://ryanlinnok.github.io',
     'data': [
         # 'security/ir.model.access.csv',
