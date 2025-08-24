@@ -1,0 +1,69 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Introduction</h2>
+
+        <h3 class="oe_slogan" style="width:80%">
+            This module, <b>X2ManyList Control</b>, is designed to automatically hide the 
+            <i>"Add a line"</i> button and the trash icon in x2Many fields when the record is 
+            not in draft status, while keeping other columns editable as long as the field 
+            is not readonly.
+        </h3>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Key Features</h2>
+
+        <div class="oe_span4 text-justify">
+            <p class="oe_mb32" style="margin:8px;">
+                The module modifies the behavior of all x2Many fields by:
+            </p>
+            <ul class="oe_mb32" style="margin:8px;">
+                <li>Hiding the <i>"Add a line"</i> button when the record is not in draft status.</li>
+                <li>Disabling the trash icon to prevent deleting rows in the same condition.</li>
+                <li>Ensuring existing rows remain editable unless the field itself is readonly.</li>
+                <li>Works generically for any model that has a <code>state</code> field.</li>
+            </ul>
+        </div>
+        <div class="oe_span8">
+            <img class="oe_demo oe_picture oe_screenshot" style="margin:0px" src="01.png"/>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Configuration</h2>
+
+        <div class="oe_span4 text-justify">
+            <p class="oe_mb32" style="margin:8px;">
+                No configuration is required. Once installed, the system will automatically
+                apply the behavior to all views containing x2Many fields that belong to 
+                records with a <code>state</code> field.
+            </p>
+        </div>
+        <div class="oe_span8">
+            <img class="oe_demo oe_picture oe_screenshot" style="margin:0px" src="02.png"/>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan" style="color:#875A7B;">Customization</h2>
+
+        <div class="oe_span4 text-justify">
+            <p class="oe_mb32" style="margin:8px;">
+                Developers can further adapt the module by modifying the included JavaScript patch:
+            </p>
+            <ul class="oe_mb32" style="margin:8px;">
+                <li><b>hide_add_line.js</b> - Extends the ListRenderer to dynamically hide or show
+                the "Add a line" and trash icon based on the parent record state.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_separator">
+</section>
